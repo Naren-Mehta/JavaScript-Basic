@@ -35,10 +35,10 @@ document.querySelector('.btn-roll').addEventListener('click',function(){
         currentDOM.textContent=roundScore;
     }else{
         roundScore=0;
-        document.querySelector('.player-'+activePlayer+'-panel').classList.remove('active');
+        document.querySelector('.player-'+activePlayer+'-panel').classList.toggle('active');
         activePlayer=activePlayer === 0? activePlayer=1: activePlayer=0;
         currentDOM.textContent=roundScore;
-        document.querySelector('.player-'+activePlayer+'-panel').classList.add('active');
+        document.querySelector('.player-'+activePlayer+'-panel').classList.toggle('active');
 
     }
 });
@@ -50,11 +50,11 @@ document.querySelector('.btn-hold').addEventListener('click',function(){
 
     scores[activePlayer]=scores[activePlayer]+roundScore;
     document.querySelector('#score-'+activePlayer).textContent=scores[activePlayer];
-    document.querySelector('.player-'+activePlayer+'-panel').classList.remove('active');
+    document.querySelector('.player-'+activePlayer+'-panel').classList.toggle('active');
 
     activePlayer=activePlayer == 0? 1: 0;
     roundScore=0;
-    document.querySelector('.player-'+activePlayer+'-panel').classList.add('active');
+    document.querySelector('.player-'+activePlayer+'-panel').classList.toggle('active');
 
     currentDOM.textContent=roundScore;
     diceDOM.style.display='none';
